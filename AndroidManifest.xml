@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <application
@@ -21,10 +21,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:launchMode="singleTask"
             android:name="com.ssalvatori.fondosmutuos.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
         <activity
+            android:launchMode="singleTask"
             android:name="com.ssalvatori.fondosmutuos.BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>

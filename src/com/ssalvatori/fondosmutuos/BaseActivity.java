@@ -1,6 +1,7 @@
 package com.ssalvatori.fondosmutuos;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,15 +32,20 @@ public class BaseActivity extends Activity {
 	    }
 	}
 	
-	
-	private boolean openAbout() {
-    	setContentView(R.layout.activity_about);
-		return true;		
+	/**
+	 * 
+	 */
+	private void openAbout() {
+		Intent intent = new Intent(this, AboutActivity.class);
+		startActivity(intent);
 	}
-
-	public boolean openSelector() {
-    	setContentView(R.layout.activity_selector);
-		return true;
+	
+	/**
+	 * 
+	 */
+	public void openSelector() {
+		Intent intent = new Intent(this, SelectorActivity.class);
+		startActivity(intent);
 	}
 
 }
