@@ -7,7 +7,8 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,18 +18,27 @@
         <activity android:name="com.ssalvatori.fondosmutuos.SelectorActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:launchMode="singleInstance"
             android:name="com.ssalvatori.fondosmutuos.AboutActivity"
-            android:label="@string/title_activity_about" >
+            android:label="@string/title_activity_about"
+            android:launchMode="singleInstance" >
         </activity>
         <activity
-            android:launchMode="singleInstance"
             android:name="com.ssalvatori.fondosmutuos.BaseActivity"
-            android:label="@string/title_activity_base" >
+            android:label="@string/title_activity_base"
+            android:launchMode="singleInstance" >
+        </activity>
+        <activity
+            android:name="com.ssalvatori.fondosmutuos.DetailsActivity"
+            android:label="@string/title_activity_details"
+            android:parentActivityName="com.ssalvatori.fondosmutuos.BaseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ssalvatori.fondosmutuos.BaseActivity" />
         </activity>
     </application>
 

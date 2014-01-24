@@ -35,8 +35,13 @@ public class BaseActivity extends Activity {
 	/**
 	 * 
 	 */
-	private void openAbout() {
+	public void openAbout() {
 		Intent intent = new Intent(this, AboutActivity.class);
+		startActivity(intent);
+	}
+	
+	public void openDetails(String text) {
+		Intent intent = new Intent(this, DetailsActivity.class);
 		startActivity(intent);
 	}
 	
