@@ -25,7 +25,8 @@ public class SelectorActivity extends BaseActivity implements LoaderManager.Load
 			
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
-				String textSelected = (String) lv.getItemAtPosition(position);
+				Result itemSelected =  (Result) lv.getItemAtPosition(position);
+				String textSelected = itemSelected.name;
 				openDetails(textSelected);
 			}
 		});

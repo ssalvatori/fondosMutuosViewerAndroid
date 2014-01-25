@@ -42,6 +42,7 @@ public class BaseActivity extends Activity {
 	
 	public void openDetails(String text) {
 		Intent intent = new Intent(this, DetailsActivity.class);
+		intent.putExtra("fondosMutuoSelected", text);
 		startActivity(intent);
 	}
 	
