@@ -1,6 +1,5 @@
 package com.ssalvatori.fondosmutuos;
 
-import java.net.URL;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -9,11 +8,10 @@ import org.json.JSONObject;
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 
-import com.edwrodrig.edroid.content.Downloader;
+import com.ssalvatori.fondosmutuos.client.Downloader;
 
 public class ServicesLoader extends AsyncTaskLoader<ArrayList<Result>>{
 
-	
 	private String urlString;
 	
 	public ServicesLoader(Context context, String urlString) {
@@ -23,9 +21,10 @@ public class ServicesLoader extends AsyncTaskLoader<ArrayList<Result>>{
 	
 	@Override
 	public ArrayList<Result> loadInBackground() {
+		ArrayList<Result> results;
     	try {
-    		ArrayList<Result> results = new ArrayList<Result>();
-    		JSONObject jsonObj = new JSONObject(Downloader.getString(new URL(urlString)));
+    		results = new ArrayList<Result>();
+    		JSONObject jsonObj = new JSONObject(Downloader.getData(urlString));
     		JSONArray names = jsonObj.getJSONArray("names");
     		
     		for (int i = 0; i < names.length(); i++) {
@@ -33,9 +32,10 @@ public class ServicesLoader extends AsyncTaskLoader<ArrayList<Result>>{
     			result.name = names.getString(i);
     			results.add(result);
     		}
-    		return results;
 		} catch (Exception exception) {
-			return null;
+			results = null;
 		}
+    	
+    	return results;
 	}
 }
