@@ -2,6 +2,8 @@ package com.ssalvatori.fondosmutuos;
 
 import java.util.ArrayList;
 
+import com.ssalvatori.fondosmutuos.client.ServicesLoader;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;

@@ -1,4 +1,4 @@
-package com.ssalvatori.fondosmutuos;
+package com.ssalvatori.fondosmutuos.client;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,8 @@ import org.json.JSONObject;
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 
-import com.ssalvatori.fondosmutuos.client.Downloader;
+import com.ssalvatori.fondosmutuos.Result;
+import com.ssalvatori.fondosmutuos.utils.Downloader;
 
 public class ServicesLoader extends AsyncTaskLoader<ArrayList<Result>>{
 
